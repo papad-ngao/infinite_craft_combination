@@ -1,0 +1,177 @@
+let oup = ""
+const src = [
+    "0109 = 0006 Air",
+    "0101 = 0064 Airplane",
+    "0089 = 0056 Alchemy",
+    "0049 = 0033 Alcohol",
+    "0024 = 0017 Amoeba",
+    "0063 = 0042 Aquarium",
+    "0017 = 0008 Ash",
+    "0056 = 0036 Avalanche",
+    "0079 = 0052 Balloon",
+    "0055 = 0035 Beach",
+    "0110 = 0037 Blizzard",
+    "0095 = 0060 Boat",
+    "0108 = 0006 Breeze",
+    "0019 = 0014 Brick",
+    "0104 = 0065 Bubble",
+    "0103 = 0002 Burn",
+    "0061 = 0040 Canon",
+    "0043 = 0026 Chai",
+    "0044 = 0030 Cloud",
+    "0074 = 0049 Cough",
+    "0102 = 0053 Crash",
+    "0083 = 0055 Cure",
+    "0096 = 0061 Curtain",
+    "0047 = 0032 Dandelion",
+    "0075 = 0050 Devil",
+    "0053 = 0034 Desert",
+    "0070 = 0046 Dragon",
+    "0090 = 0058 Dune",
+    "0013 = 0010 Dust",
+    "0004 = 0004 Earth",
+    "0046 = 0031 Electricity",
+    "0086 = 0026 Elixir",
+    "0050 = 0008 Eruption",
+    "0092 = 0053 Explosion",
+    "0036 = 0020 Fever",
+    "0002 = 0002 Fire",
+    "0042 = 0002 Fire Breath",
+    "0076 = 0002 Fire Storm",
+    "0088 = 0057 Firefighter",
+    "0060 = 0002 Fireplace",
+    "0087 = 0002 0001 Firewater",
+    "0100 = 0044 Firework",
+    "0065 = 0044 Fireworks",
+    "0026 = 0018 Fish",
+    "0098 = 0002 Flame",
+    "0034 = 0020 Flu",
+    "0035 = 0013 Fluoride",
+    "0069 = 0018 Flying Fish",
+    "0020 = 0015 Glass",
+    "0105 = 0063 Hanglider",
+    "0082 = 0033 Hangover",
+    "0040 = 0028 Hell",
+    "0041 = 0029 Hot Spring",
+    "0058 = 0038 House",
+    "0071 = 0047 Hurricane",
+    "0057 = 0037 Ice",
+    "0021 = 0014 Kiln",
+    "0064 = 0043 Kite",
+    "0005 = 0005 Lake",
+    "0011 = 0008 Lava",
+    "0022 = 0016 Lens",
+    "0045 = 0031 Lightning",
+    "0025 = 0016 Magnifying Glass",
+    "0084 = 0055 Medicine",
+    "0023 = 0017 Microscope",
+    "0014 = 0011 Mountain",
+    "0015 = 0012 Mud",
+    "0052 = 0034 Oasis",
+    "0091 = 0005 Ocean",
+    "0068 = 0019 Paramecium",
+    "0099 = 0063 Parasail",
+    "0029 = 0002 Phoenix",
+    "0097 = 0062 Pirate",
+    "0113 = 0068 Planet"
+    "0008 = 0007 Plant",
+    "0080 = 0053 Pop",
+    "0085 = 0056 Potion",
+    "0018 = 0013 Puddle",
+    "0032 = 0023 Rain",
+    "0031 = 0022 Rainbow",
+    "0112 = 0067 Rock",
+    "0094 = 0059 Sail",
+    "0054 = 0035 Sand",
+    "0051 = 0009 Sandstorm",
+    "0078 = 0007 Seed",
+    "0059 = 0039 Ship",
+    "0028 = 0020 Sick",
+    "0010 = 0006 Smoke",
+    "0073 = 0049 Sneeze",
+    "0093 = 0037 Snow",
+    "0081 = 0054 Soda",
+    "0066 = 0013 Splash",
+    "0006 = 0006 Steam",
+    "0111 = 0067 Stone",
+    "0077 = 0051 Storm",
+    "0030 = 0021 Sun",
+    "0072 = 0048 Sunflower",
+    "0106 = 0066 Surfer",
+    "0107 = 0066 Surfing",
+    "0033 = 0024 Sushi",
+    "0067 = 0045 Telescope",
+    "0039 = 0027 Toothpaste",
+    "0038 = 0026 Tea",
+    "0016 = 0005 Tsunami",
+    "0012 = 0009 Tornado",
+    "0027 = 0019 Virus",
+    "0009 = 0008 Volcano",
+    "0037 = 0025 Wasabi",
+    "0001 = 0001 Water",
+    "0007 = 0005 Wave",
+    "0003 = 0003 Wind",
+    "0062 = 0041 Window",
+    "0048 = 0033 Wine"
+]
+for (let i = 0; i < src.length; i++) {
+    const elem = src[i]
+    const id = elem.split(" = ")[0]
+    const body = elem.split(" = ")[1]
+    const barr = body.split(" ")
+    let fenn = []
+    for (let j = 0; j < barr.length; j++) {
+        const inel = barr[j]
+        let tbfnn = 1
+        for (let k = 0; k < inel.length; k++) {
+            const iiel = inel[k]
+            let cin = 0
+            if (
+                (
+                    iiel.charCodeAt(0) >=
+                    "0".charCodeAt(0)
+                ) &&
+                (
+                    iiel.charCodeAt(0) <=
+                    "9".charCodeAt(0)
+                )
+            ) {
+                cin = 1
+            }
+            if (cin != 1) {
+                tbfnn = 0
+            }
+        }
+        if (fenn.length == 0) {
+            if (tbfnn != 1) {
+                fenn.push(j)
+            }
+        }
+    }
+    let imgl = ""
+    const eml = barr.slice(0, fenn)
+    for (let j = 0; j < eml.length; j++) {
+        imgl += "                <img id=\"elem_col_b_col_a_img\" src=\"emoji images/" + eml[j] + ".png\" alt=\"\">\n"
+    }
+
+    oup += ("" +
+        "    <div id=\"elem\">\n" +
+        "        <div id=\"elem_col_a\">" + id + " = </div>\n" +
+        "        <div id=\"elem_col_b\">\n" +
+        "            <div id=\"elem_col_b_col_a\">\n" +
+        imgl +
+        "            </div>\n" +
+        "            <div id=\"elem_col_b_col_b\">\n" +
+        "                " + barr.slice(fenn, barr.length).join(" ") + "\n" +
+        "        </div>\n" +
+        "    </div>\n" +
+        "</div>\n"
+    )
+    /*
+    console.log(id)
+    console.log(barr.slice(0, fenn))
+    console.log(barr.slice(fenn, barr.length).join(" "))
+    console.log("")
+    */
+}
+console.log(oup)
